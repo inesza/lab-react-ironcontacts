@@ -9,6 +9,7 @@ function App() {
   const handleAddRandomContact = () => {
     const copy = [...contactsArray];
     let randomAdd = contacts.filter((contact) => copy.indexOf(contact) === -1);
+    if (!randomAdd.length) return;
     randomAdd = randomAdd[Math.floor(Math.random() * (randomAdd.length - 1))];
     copy.push(randomAdd);
     setContacts(copy);
